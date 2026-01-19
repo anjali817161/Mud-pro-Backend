@@ -74,7 +74,15 @@ export async function saveCompany(req, res) {
 
     if (company) {
       // Update existing company
-      Object.assign(company, data);
+      company.companyName = data.companyName;
+      company.address = data.address;
+      company.phone = data.phone;
+      company.email = data.email;
+      company.currencySymbol = data.currencySymbol;
+      company.currencyFormat = data.currencyFormat;
+      if (data.logoUrl !== undefined) {
+        company.logoUrl = data.logoUrl;
+      }
       await company.save();
       console.log("✅ Company updated");
     } else {

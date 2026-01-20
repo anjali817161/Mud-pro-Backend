@@ -1,4 +1,4 @@
-import { Package } from "../../service/services.model.js";
+import { Package } from "../../modules/service/services.model.js";
 
 // CREATE
 export const createPackage = async (req, res) => {

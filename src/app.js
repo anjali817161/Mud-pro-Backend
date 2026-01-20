@@ -5,7 +5,7 @@ import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
 
-import engineerRoutes from "./routes/engineer.routes.js";
+import engineerRoutes from "./routes/engineer/engineer.routes.js";
 import companyRoutes from "./routes/company/company.routes.js";
 
 // Product routes imports would go here

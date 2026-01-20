@@ -1,5 +1,5 @@
 import express from "express";
-import { createEngineering, getEngineering, updateEngineering, deleteEngineering } from "../../modules/services/controller/service.engineering.controller.js";
+import { createEngineering, getEngineering, updateEngineering, deleteEngineering } from "../../controllers/service/service.engineering.controller.js";
 
 const router = express.Router();
 

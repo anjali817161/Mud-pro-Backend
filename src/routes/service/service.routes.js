@@ -1,5 +1,5 @@
 import express from "express";
-import { createService, getServices, updateService, deleteService } from "../../modules/services/controller/service.controller.js";
+import { createService, getServices, updateService, deleteService } from "../../controllers/service/service.controller.js";
 
 const router = express.Router();
 

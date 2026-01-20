@@ -1,4 +1,4 @@
-import { Engineering } from "../../service/services.model.js";
+import { Engineering } from "../../modules/service/services.model.js";
 
 export const createEngineering = async (req, res) => {
   try {

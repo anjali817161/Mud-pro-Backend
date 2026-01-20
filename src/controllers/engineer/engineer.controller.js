@@ -1,4 +1,4 @@
-import Engineer from "../modules/engineers/engineer.model.js";
+import Engineer from "../../modules/engineers/engineer.model.js";
 
 // ✅ POST: Save engineer
 export async function createEngineer(req, res) {
@@ -19,7 +19,7 @@ export async function createEngineer(req, res) {
 // ✅ GET: All engineers (for dropdown)
 export async function getEngineers(req, res) {
   try {
-    const engineers = await find().sort({ firstName: 1 });
+    const engineers = await Engineer.find().sort({ firstName: 1 });
     res.json({
       success: true,
       data: engineers,

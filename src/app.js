@@ -6,11 +6,15 @@ import fs from "fs";
 import { fileURLToPath } from "url";
 
 import engineerRoutes from "./routes/engineer.routes.js";
-import companyRoutes from "./routes/company.routes.js";
+import companyRoutes from "./routes/company/company.routes.js";
 
 // Product routes imports would go here
 import productRoutes from "./routes/product/product.routes.js";
 import { errorHandler } from "./middlewares/error.middleware.js";
+
+import servicesRoutes from "./routes/service/service.routes.js";
+import engineeringRoutes from "./routes/service/engineering.routes.js";
+import packageRoutes from "./routes/service/package.routes.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -48,6 +52,10 @@ app.use((err, req, res, next) => {
 app.use("/api/engineers", engineerRoutes);
 app.use("/api/company", companyRoutes);
 
+//service routes
+app.use("/api/services", servicesRoutes);
+app.use("/api/services/engineering", engineeringRoutes);
+app.use("/api/services/packages", packageRoutes);
 
 // Product routes
 app.use("/api/v1/products", productRoutes);

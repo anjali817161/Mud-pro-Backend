@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const packageSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -7,9 +7,7 @@ const packageSchema = new mongoose.Schema({
   price: { type: Number, default: 0 },
 }, { timestamps: true });
 
-module.exports = mongoose.model("Package", packageSchema);
-
-
+export const Package = mongoose.model("Package", packageSchema);
 
 const serviceSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -18,8 +16,7 @@ const serviceSchema = new mongoose.Schema({
   price: { type: Number, default: 0 },
 }, { timestamps: true });
 
-module.exports = mongoose.model("Service", serviceSchema);
-
+export const Service = mongoose.model("Service", serviceSchema);
 
 const engineeringSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -28,4 +25,4 @@ const engineeringSchema = new mongoose.Schema({
   price: { type: Number, default: 0 },
 }, { timestamps: true });
 
-module.exports = mongoose.model("Engineering", engineeringSchema);
+export const Engineering = mongoose.model("Engineering", engineeringSchema);

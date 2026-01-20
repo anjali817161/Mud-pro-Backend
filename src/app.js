@@ -5,6 +5,9 @@ import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
 
+import operatorRoutes from "./routes/operator/operator.route.js";
+
+
 import engineerRoutes from "./routes/engineer/engineer.routes.js";
 import companyRoutes from "./routes/company/company.routes.js";
 
@@ -51,6 +54,8 @@ app.use((err, req, res, next) => {
 
 app.use("/api/engineers", engineerRoutes);
 app.use("/api/company", companyRoutes);
+app.use("/api/operators", operatorRoutes);
+
 
 //service routes
 app.use("/api/services", servicesRoutes);

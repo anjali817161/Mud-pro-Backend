@@ -12,7 +12,6 @@ export async function saveOperators(req, res) {
       });
     }
 
-    await Operator.deleteMany(); // overwrite table data
     const saved = await Operator.insertMany(operators);
 
     res.json({

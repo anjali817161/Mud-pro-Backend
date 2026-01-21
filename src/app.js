@@ -33,6 +33,18 @@ if (!fs.existsSync(uploadsDir)) {
 // 🔹 Serve static files
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+
+
+// Global error handling middleware
+app.use((err, req, res, next) => {
+  console.error('Global error handler:', err);
+  res.status(500).json({
+    success: false,
+    message: 'Internal server error',
+    error: process.env.NODE_ENV === 'development' ? err.message : undefined
+  });
+});
+
 app.use("/api/engineers", engineerRoutes);
 app.use("/api/company", companyRoutes);
 
